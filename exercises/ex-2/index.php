@@ -22,3 +22,7 @@ $duvel = new Beer ("blond", 3.5, "fresh", "Duvel", 8.5);
 
 echo $duvel->getAlcoholPercentage();
 
+$duvel->getAlcoholPercentage();
+
+echo $duvel->alcoholpercentage;
+
