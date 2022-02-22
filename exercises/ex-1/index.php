@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+
 
 /* EXERCISE 1
 TODO: Create a class beverage.
@@ -16,16 +16,18 @@ USE TYPEHINTING EVERYWHERE!
 
 class Beverage
 {
-    public string $color;
-    public float $price;
-    public string $temperature;
+    public $color;
+    // this var is available in the class only
+    public $price;
+    public $temperature;
 
 
-    public function __construct(string $color,float $price,string $temperature)
+    public function __construct(string $color,float $price,string $temperature ="cold") // here, we set the default value
         {
         $this ->color = $color;
+        // this color can be accessed elsewhere
         $this ->price = $price;
-        $this ->temperature = "cold";
+        $this ->temperature = $temperature;
         }
 
 
@@ -35,7 +37,11 @@ class Beverage
     }
 }
 
-$createCola = new Beverage("black", 2, "cold");
+// public keyword connected to the use of classes.
+
+$createCola = new Beverage("black", 2, );
 
 
 $createCola->getInfo();
+
+echo $createCola->color; //shows the color of this item. 
